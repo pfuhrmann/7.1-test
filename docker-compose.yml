@@ -1,0 +1,18 @@
+version: '2'
+services:
+  host:
+    container_name: nginx
+    build: host/.
+    ports:
+      - "9999:80"
+    links:
+      - php
+    volumes:
+      - ./host/nginx:/etc/nginx/conf.d
+      - .:/code
+
+  php:
+    container_name: php
+    build: php/.
+    volumes:
+      - .:/code
