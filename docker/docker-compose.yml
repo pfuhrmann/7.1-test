@@ -9,10 +9,10 @@ services:
       - php
     volumes:
       - ./host/nginx:/etc/nginx/conf.d
-      - .:/code
+      - ../code:/code
 
   php:
     container_name: php
     build: php/.
     volumes:
-      - .:/code
+      - ../code:/code
